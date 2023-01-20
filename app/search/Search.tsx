@@ -8,6 +8,7 @@ const Search = () => {
 
   const handleSearch = (e: FormEvent<HTMLFormElement>) =>{
     e.preventDefault()
+    setSearch('')
     router.push(`/search/${search}`)
   }
   return (
@@ -15,6 +16,7 @@ const Search = () => {
       <form onSubmit={handleSearch}>
         <input
           value={search}
+          type='text'
           placeholder="Search"
           onChange={(e) => setSearch(e.target.value)}
           className="outline-none rounded-md p-2 mr-4 w-1/3"
